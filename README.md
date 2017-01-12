@@ -86,21 +86,30 @@ Card can be used in forms where you have multiple inputs that render to a single
 <div class='card-wrapper'></div>
 <!-- CSS is included via this JavaScript file -->
 <script src="/path/to/card.js"></script>
-<form>
-    <input type="text" name="number">
-    <input type="text" name="first-name"/>
-    <input type="text" name="last-name"/>
-    <input type="text" name="expiry"/>
-    <input type="text" name="cvc"/>
-</form>
+            <form action="">
+                <label for="cc-num">Card Number</label>
+                <input type="text" name="cardnumber" id="cc-num" autocomplete="cc-number" x-autocompletetype="cc-number" pattern="\d*">
+                <label for="cc-name">Name on Card</label>
+                <input type="text" name="ccname" id="cc-name" autocomplete="cc-name" x-autocompletetype="cc-full-name">
+                <label for="cardExpirationMonth">Month</label>
+                <input placeholder="MM" type="number" name="cardExpirationMonth" id="cardExpirationMonth" autocomplete="cc-exp-month" x-autocompletetype="cc-exp-month">
+                <label for="cardExpirationYear">Year</label>
+                <input placeholder="YY" type="number" name="cardExpirationYear" id="cardExpirationYear" autocomplete="cc-exp-year" x-autocompletetype="cc-exp-year">
+                <label for="cvc2">CVC</label>
+                <input placeholder="CVC" type="number" name="cvc" id="cvc2" autocomplete="cc-csc" x-autocompletetype="cc-csc">
+            </form>
 <script>
 var card = new Card({
     form: 'form',
     container: '.card-wrapper',
 
     formSelectors: {
-        nameInput: 'input[name="first-name"], input[name="last-name"]'
+        numberInput: 'input#cc-num', // optional — default input[name="number"]
+        expiryInput: ['input#cardExpirationMonth','input#cardExpirationYear'], // optional — default input[name="expiry"]
+        cvcInput: 'input#cvc2', // optional — default input[name="cvc"]
+        nameInput: 'input#cc-name' // optional - defaults input[name="name"]
     }
+
 });
 </script>
 </body>

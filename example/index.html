@@ -28,19 +28,32 @@
 
         <div class="form-container active">
             <form action="">
-                <input placeholder="Card number" type="tel" name="number">
-                <input placeholder="Full name" type="text" name="name">
-                <input placeholder="MM/YY" type="tel" name="expiry">
-                <input placeholder="CVC" type="number" name="cvc">
+                <label for="cc-num">Card Number</label>
+                <input type="text" name="cardnumber" id="cc-num" autocomplete="cc-number" x-autocompletetype="cc-number" pattern="\d*">
+                <label for="cc-name">Name on Card</label>
+                <input type="text" name="ccname" id="cc-name" autocomplete="cc-name" x-autocompletetype="cc-full-name">
+                <label for="cardExpirationMonth">Month</label>
+                <input placeholder="MM" type="number" name="cardExpirationMonth" id="cardExpirationMonth" autocomplete="cc-exp-month" x-autocompletetype="cc-exp-month">
+                <label for="cardExpirationYear">Year</label>
+                <input placeholder="YY" type="number" name="cardExpirationYear" id="cardExpirationYear" autocomplete="cc-exp-year" x-autocompletetype="cc-exp-year">
+                <label for="cvc2">CVC</label>
+                <input placeholder="CVC" type="number" name="cvc" id="cvc2" autocomplete="cc-csc" x-autocompletetype="cc-csc">
             </form>
         </div>
     </div>
 
-    <script src="http://localhost:8080/card.js"></script>
+    <script src="../dist/card.js"></script>
     <script>
         new Card({
             form: document.querySelector('form'),
-            container: '.card-wrapper'
+            container: '.card-wrapper',
+    formSelectors: {
+        numberInput: 'input#cc-num', // optional — default input[name="number"]
+        expiryInput: ['input#cardExpirationMonth','input#cardExpirationYear'], // optional — default input[name="expiry"]
+        cvcInput: 'input#cvc2', // optional — default input[name="cvc"]
+        nameInput: 'input#cc-name' // optional - defaults input[name="name"]
+    },
+            
         });
     </script>
 </body>
