@@ -53,7 +53,7 @@ var card = new Card({
 
     masks: {
         cardNumber: '•' // optional - mask card number
-    }
+    },
 
     // if true, will log helpful messages for setting up Card
     debug: false // optional - default false
@@ -208,9 +208,13 @@ $('form').card({
 
 Card has wrappers that make it easy to use with other javascript libraries:
 
-### Angular (1.x Currently)
+### Angular 1.x
 
 * [angular-card](https://github.com/gavruk/angular-card)
+
+### Angular 2+
+
+* [ngx-card](https://github.com/ihym/ngx-card)
 
 ### Ember
 
@@ -220,6 +224,7 @@ Card has wrappers that make it easy to use with other javascript libraries:
 
 * [react-credit-card](https://github.com/JohnyDays/react-credit-card)
 * [card-react](https://github.com/shatran/card-react)
+* [react-plastic](https://github.com/armsteadj1/react-plastic) - static CSS only version.
 
 ## Development
 
@@ -248,7 +253,7 @@ Card is used in the wild in these places:
 * [GigSalad](https://www.gigsalad.com)
 * [Boligninja](http://www.boligninja.dk)
 * [EasyCarros](http://www.easycarros.com/)
-* [Sintelle] (http://www.sintelleparapharmacie.com/)
+* [Sintelle](http://www.sintelleparapharmacie.com/)
 * [Wevorce](http://wevorce.com/)
 * [PayumServer](https://github.com/Payum/PayumServer)
 * [Paribus](https://paribus.co)
@@ -256,6 +261,11 @@ Card is used in the wild in these places:
 * [Tortuba](https://www.tortuba.com)
 * [Netlify](https://www.netlify.com)
 * [The Spice House](https://www.thespicehouse.com/)
+* [Touts](https://www.touts.com.br/)
+* [Ryman Limited](http://www.ryman.co.uk)
+* [Robert Dyas](http://www.robertdyas.co.uk)
+* [ROKA](https://www.rokahub.com)
+* [LeSalon](https://lesalon.com)
 
 Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
 
